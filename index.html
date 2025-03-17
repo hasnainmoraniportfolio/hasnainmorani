@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasnain Morani</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #0d1117; /* GitHub dark background */
+      color: #c9d1d9; /* GitHub light text */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center horizontally */
+      justify-content: center; /* Center vertically */
+      min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    }
+
+    header {
+      background: #161b22; /* GitHub header background */
+      color: #c9d1d9;
+      padding: 1.5rem 0;
+      text-align: center;
+      border-bottom: 1px solid #30363d; /* GitHub border color */
+      width: 100%; /* Ensure header spans the full width */
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #58a6ff; /* GitHub link color */
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 2rem;
+      margin: 1.5rem 0; /* Adjusted margin */
+      max-width: 800px;
+      background: #161b22; /* GitHub section background */
+      border: 1px solid #30363d; /* GitHub border color */
+      border-radius: 6px; /* GitHub border radius */
+      width: 100%; /* Ensure sections span the full width */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+
+    h2 {
+      color: #58a6ff; /* GitHub heading color */
+      font-size: 1.75rem;
+      margin-top: 0;
+    }
+
+    #about {
+      text-align: center; /* Center-align all content inside the #about section */
+    }
+
+    @keyframes vibrate {
+      0% { transform: translateX(0) translateY(0); }
+      10% { transform: translateX(-3px) translateY(-3px); }
+      20% { transform: translateX(3px) translateY(3px); }
+      30% { transform: translateX(-3px) translateY(3px); }
+      40% { transform: translateX(3px) translateY(-3px); }
+      50% { transform: translateX(-3px) translateY(-3px); }
+      60% { transform: translateX(3px) translateY(3px); }
+      70% { transform: translateX(-3px) translateY(3px); }
+      80% { transform: translateX(3px) translateY(-3px); }
+      90% { transform: translateX(-3px) translateY(-3px); }
+      100% { transform: translateX(0) translateY(0); }
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%; /* Circular image */
+      border: 3px solid #58a6ff; /* GitHub accent color */
+      margin-bottom: 1rem;
+      display: block; /* Ensure the image behaves as a block element */
+      margin-left: auto; /* Center the image horizontally */
+      margin-right: auto;
+      box-shadow: 
+        0 0 20px rgba(88, 166, 255, 0.8), /* Blueish border shadow with noticeable opacity */
+        0 8px 16px rgba(88, 166, 255, 0.6), /* Blueish shadow */
+        0 4px 8px rgba(88, 166, 255, 0.4); /* Subtle secondary shadow */
+      transition: transform 0.1s ease, box-shadow 0.1s ease; /* Smooth transition */
+      transform-style: preserve-3d; /* Enable 3D transformations */
+    }
+
+    .project {
+      margin-bottom: 1.5rem;
+    }
+
+    .project h3 {
+      color: #c9d1d9; /* GitHub text color */
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .project p {
+      color: #8b949e; /* GitHub secondary text color */
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      color: #8b949e; /* GitHub secondary text color */
+      width: 100%; /* Ensure footer spans the full width */
+    }
+
+    footer a {
+      color: #58a6ff; /* GitHub link color */
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .social-handles {
+      margin-top: 1rem;
+    }
+
+    .social-handles a {
+      margin: 0 10px;
+      display: inline-block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      outline: none; /* Remove default outline */
+      border: none; /* Remove default border */
+    }
+
+    .social-handles a:hover {
+      transform: scale(1.2); /* Slightly enlarge icons on hover */
+      box-shadow: 0 0 10px rgba(88, 166, 255, 0.8); /* Blueish shadow on hover */
+    }
+
+    .social-handles img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0.8); /* Make icons slightly dimmer */
+      transition: filter 0.2s ease; /* Smooth transition for brightness */
+      border: none; /* Ensure no border is applied to the image */
+    }
+
+    .social-handles img[alt="GitHub"] {
+      filter: invert(1) brightness(0.8); /* Invert the color to make it white */
+    }
+
+    .social-handles img:hover {
+      filter: brightness(1); /* Brighten icons on hover */
+    }
+
+    .social-handles img[alt="GitHub"]:hover {
+      filter: invert(1) brightness(1); /* Ensure GitHub logo stays white on hover */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hasnain Morani</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm a passionate developer who loves building cool projects. Welcome to my portfolio!</p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project">
+      <h3>Project 1: Personal Website</h3>
+      <p>A simple personal website built with HTML and CSS.</p>
+    </div>
+    <div class="project">
+      <h3>Project 2: To-Do App</h3>
+      <p>A to-do app built with JavaScript.</p>
+    </div>
+    <div class="project">
+      <h3>Project 3: Weather App</h3>
+      <p>A weather app that fetches data from an API.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to me at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+    <div class="social-handles">
+      <a href="https://github.com/your-username" target="_blank" aria-label="GitHub">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="24" height="24">
+      </a>
+      <a href="https://linkedin.com/in/your-username" target="_blank" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="24" height="24">
+      </a>
+      <a href="https://twitter.com/your-username" target="_blank" aria-label="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="24" height="24">
+      </a>
+      <a href="mailto:your-email@example.com" aria-label="Email">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="24" height="24">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Select the profile image element
+    const profileImg = document.querySelector('.profile-img');
+
+    // Function to simulate a vibrate effect
+    function vibrate() {
+      // Apply the vibrate animation to the profile image
+      profileImg.style.animation = 'vibrate 0.3s ease-in-out'; // Vibrate for 0.3 seconds (1 iteration)
+      
+      // Remove the animation after it completes
+      setTimeout(() => {
+        profileImg.style.animation = '';
+      }, 300); // Match the duration of the animation (0.3 seconds)
+    }
+
+    // Trigger the vibrate effect when the page loads
+    window.onload = vibrate;
+
+    // Function to make the image follow the cursor with limited influence
+    function handleMouseMove(e) {
+      // Get the cursor's position
+      const { clientX, clientY } = e;
+
+      // Get the position and size of the profile image
+      const { left, top, width, height } = profileImg.getBoundingClientRect();
+
+      // Calculate the cursor's position relative to the center of the image
+      const centerX = left + width / 2;
+      const centerY = top + height / 2;
+      const deltaX = (clientX - centerX) / (width / 2); // Normalize X position (-1 to 1)
+      const deltaY = (clientY - centerY) / (height / 2); // Normalize Y position (-1 to 1)
+
+      // Limit the range of influence
+      const maxDistance = 0.5; // Cursor must be within 50% of the image's size to have an effect
+      const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY); // Distance from the center
+      const influence = Math.max(0, 1 - distance / maxDistance); // Influence factor (0 to 1)
+
+      // Limit rotation to 180 degrees and scale by influence
+      const maxRotation = 180; // Maximum rotation in degrees
+      const rotateX = deltaY * -maxRotation * influence; // Rotate up to 180 degrees on X-axis
+      const rotateY = deltaX * maxRotation * influence; // Rotate up to 180 degrees on Y-axis
+
+      // Apply 3D rotation and shadow based on cursor position
+      profileImg.style.transform = `
+        perspective(1000px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        translateZ(20px)
+      `;
+
+      // Update shadow based on cursor position
+      profileImg.style.boxShadow = `
+        ${deltaX * 30 * influence}px ${deltaY * 30 * influence}px 30px rgba(88, 166, 255, 0.6),
+        ${deltaX * 15 * influence}px ${deltaY * 15 * influence}px 15px rgba(88, 166, 255, 0.4)
+      `;
+    }
+
+    // Add event listener for mouse movement
+    document.addEventListener('mousemove', handleMouseMove);
+
+    // Reset the image when the cursor leaves the window
+    document.addEventListener('mouseleave', () => {
+      profileImg.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+      profileImg.style.boxShadow = '0 0 20px rgba(88, 166, 255, 0.8), 0 8px 16px rgba(88, 166, 255, 0.6), 0 4px 8px rgba(88, 166, 255, 0.4)';
+    });
+  </script>
+</body>
+</html>
